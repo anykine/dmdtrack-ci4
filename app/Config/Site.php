@@ -16,6 +16,13 @@ class Site extends BaseConfig
     public string $adminTheme    = "admin";
     public string $captchaFolder = "assets/captcha";
 
+    /**
+     * Self-registration (user/register). CI3 had it always on: anyone who could reach the
+     * site could create an account and, after clicking the emailed link, see all records.
+     * Off by default; admins add users instead.
+     */
+    public bool $allowRegistration = false;
+
     // Login throttling
     public int $loginMaxTime     = 10; // seconds
     public int $loginMaxAttempts = 3;
